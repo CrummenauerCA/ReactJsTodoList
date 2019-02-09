@@ -29,7 +29,7 @@ class App extends Component {
           }
         </div>
         <div className="notesFooter">
-          Rodapé será aqui...
+          <NoteForm />
         </div>
       </div>
     );
