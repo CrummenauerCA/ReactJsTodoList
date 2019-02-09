@@ -3,9 +3,16 @@ import './App.css';
 import Note from './note/Note';
 import NoteForm from './noteForm/NoteForm';
 
+import { DB_CONFIG } from './Config/config';
+import firebase from 'firebase/app';
+
 class App extends Component {
   constructor(props) {
     super(props);
+
+    this.app = firebase.initializeApp(DB_CONFIG);
+    this.appdb = this.app.database().ref().child('notes');
+    
     this.state = {
       notes: [
         { id: 1, noteContent: 'Nota 1 aqui!' },
@@ -13,6 +20,8 @@ class App extends Component {
       ],
     }
   }
+
+
 
   addNote = note => {
     const previousNotes = this.state.notes;
