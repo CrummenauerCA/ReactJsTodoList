@@ -1,44 +1,55 @@
+* {
+  transition: 0.25s ease-in-out;
+}
+
 .note {
   padding: 6px;
   height: auto;
-  margin: auto;
   margin: 4px;
-  width: auto;
   font-family: 'Lato', sans-serif;
-  background-color: #eed;
-  border-radius: 6px;
-  box-shadow: 4px 4px 4px #333;
+  background-color: #eee;
+  border-radius: 12px;
+  box-shadow: 2px 2px 4px #444;
+}
+
+.note:hover {
+  padding: 12px;
+  box-shadow: 4px 4px 4px #666;
+  border-radius: 24px;
+  cursor: default;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-  }
-  to {
-    opacity: 0.8;
+  } to {
+    opacity: 0.6;
   }
 }
 
 @keyframes fadeOut {
   from {
-    opactiy: 0.8;
-  }
-  to {
+    opactiy: 0.6;
+  } to {
     opacity: 0;
   }
 }
 
 .fade-in {
-  opacity: 0;
-  animation: fadeIn ease-in 1;
+  animation: fadeIn ease-in;
   animation-fill-mode: forwards;
-  animation-duration: 0.3s;
+  animation-duration: .2s;
+}
+
+.fade-out {
+  animation: fadeIn ease-out;
+  animation-fill-mode: forwards;
+  animation-duration: .2s;
 }
 
 .noteContent {
   float: left;
   padding-right: 10px;
-  display: block;
 }
 
 .closebtn {
